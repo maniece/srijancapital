@@ -32,7 +32,7 @@ int main()
       }
     }
    
-    for(i=0;i<n;i++){cnt[i]=decimalposition(arr[i]);} //Getting the highest decimal position of the number
+    for(i=0;i<n;i++){cnt[i]=decimalposition(arr[i]);} //Getting the highest placevalue of a number
     
 
     arrangearray(); //Sorting the array
@@ -50,17 +50,16 @@ int main()
         m=decimalposition(number)*10;
         number=number+(arr[l]*m);
     }
-    printf("\nThe smallest number we will get from the combination array list is\n%.0f",number);
+    printf("\nThe smallest number we will get from the inputs is\n%.0f",number);
   
  
-  //  else {printf("Enter the value within the limit!!!");}
     getch();
     return 0;
 }
 
 
 //Functions
-//1. Function to find the placevalue of a number
+//1. Function to find the highest placevalue of a number
 int decimalposition(int a)
 {
     int dummy=0; double mod=1;
@@ -78,7 +77,7 @@ int arrangearray()
      int temp1,temp2,i,k,tempvalue;
  for(i=0;i<n;i++)
  {
-	for(k=0;k<n-1;k++)
+	for(k=0;k<n-1;k++) //Here there some condition to perfect sorting to be occur
 	{
    	if(((arr[k]/cnt[k])==(arr[k+1]/cnt[k+1])) && (arr[k]<arr[k+1])){sort(k);  }
 		if((arr[k]/cnt[k])>(arr[k+1]/cnt[k+1]) || ((cnt[k]==cnt[k+1]) && (arr[k]>arr[k+1]))){	sort(k); }
@@ -96,7 +95,7 @@ int arrangearray()
     return 0;
 }
 
-	int sort(int k)
+	int sort(int k)  //This function dones the sorting
 	{
 			int temp1,temp2;
 			temp1=arr[k];
