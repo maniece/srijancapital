@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Challenge</title>
+	<!--JQUERY FILES-->
+
+	<style type="text/css">
+	body{
+		overflow-x: hidden;
+	}
+	.box{
+		background-color: red;
+		width:200px;
+		height:200px;
+		cursor:pointer;
+		position: relative;
+		left:-10px;
+	}
+	/*Animation for the square to slide*/
+	.animation{
+		-webkit-animation-name:challenge;
+		-webkit-animation-duration:3s;
+		
+		
+		animation-name:challenge;
+		animation-duration:3s;
+		}
+
+	@-webkit-keyframes challenge{
+		0%{left: -10px;}
+		100%{left:100%; }
+	}
+	
+
+	@keyframes challenge{
+		0%{left: -10px;}
+		100%{left:100%; }
+	}
+	.box:hover{
+		background-color: blue;		
+	}
+	
+	</style>
+	
+</head>
+<body>
+	<div class="box" onclick="this.className='box animation'" onmouseup="this.className='box'"></div>
+</body>
+</html>
