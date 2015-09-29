@@ -80,29 +80,24 @@ int arrangearray()
 	for(k=0;k<n-1;k++) //Here there some condition to perfect sorting to be occur
 	{
    	if(((arr[k]/cnt[k])==(arr[k+1]/cnt[k+1])) && (arr[k]<arr[k+1])){sort(k);  }
-		if((arr[k]/cnt[k])>(arr[k+1]/cnt[k+1]) || ((cnt[k]==cnt[k+1]) && (arr[k]>arr[k+1]))){	sort(k); }
-	
-	 
-	 			tempvalue=(arr[k]*cnt[k+1]*10)/cnt[k];
-		if((tempvalue==(arr[k+1]*10)) &&(arr[k]>arr[k+1]) &&(arr[k]!=(arr[k+1]*cnt[k])/cnt[k+1]) ) {sort(k);}
-		if((arr[k]==(arr[k+1]*cnt[k])/cnt[k+1]) && ((arr[k]<arr[k+1]))) {sort(k);}
+	if((arr[k]/cnt[k])>(arr[k+1]/cnt[k+1]) || ((cnt[k]==cnt[k+1]) && (arr[k]>arr[k+1]))){	sort(k); }
+	tempvalue=(arr[k]*cnt[k+1]*10)/cnt[k];
+	if((tempvalue==(arr[k+1]*10)) &&(arr[k]>arr[k+1]) &&(arr[k]!=(arr[k+1]*cnt[k])/cnt[k+1]) ) {sort(k);}
+	if((arr[k]==(arr[k+1]*cnt[k])/cnt[k+1]) && ((arr[k]<arr[k+1]))) {sort(k);}
  	if((tempvalue>(arr[k+1]*10))&&((tempvalue%10)>(arr[k+1]))) {sort(k);}
- 	
-
-  	
-		}
+ 	}
  }
     return 0;
 }
 
-	int sort(int k)  //This function dones the sorting
-	{
-			int temp1,temp2;
-			temp1=arr[k];
-			arr[k]=arr[k+1];
-			arr[k+1]=temp1;
-			
-			temp2=cnt[k];
-			cnt[k]=cnt[k+1];
-			cnt[k+1]=temp2;
-	}
+int sort(int k)  //This function dones the sorting
+{
+	int temp1,temp2;
+	temp1=arr[k];
+	arr[k]=arr[k+1];
+	arr[k+1]=temp1;
+	
+	temp2=cnt[k];
+	cnt[k]=cnt[k+1];
+	cnt[k+1]=temp2;
+}
